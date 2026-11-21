@@ -267,24 +267,26 @@ html, body {
 }
 
 .pinkie-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: clamp(480px, 62vh, 760px);
-  width: clamp(380px, 50vw, 680px);
-  margin-bottom: 0;
-  pointer-events: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: clamp(480px, 62vh, 760px);
+    width: clamp(380px, 50vw, 680px);
+    margin-bottom: 0;
+    pointer-events: auto;
+    transform-origin: bottom center;
+    /* Đặt chuyển động nhún nhẹ ở lớp bọc ngoài để chạy liên tục không bao giờ bị ngắt */
+    animation: pinkieIdleMotion 2.2s ease-in-out infinite;
+    will-change: transform;
 }
 
 .pinkie-character {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-origin: bottom center;
-  /* Continuous Rhythmic Head Bobbing, Tilt, and Soft Bounce */
-  animation: pinkieIdleMotion 2.2s ease-in-out infinite;
-  will-change: transform;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom center;
+    will-change: transform;
 }
 
 @keyframes pinkieIdleMotion {
